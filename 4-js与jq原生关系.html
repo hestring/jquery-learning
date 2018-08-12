@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('#div').click(function () {
+                alert($(this).html());  //jq写法
+                alert(this.innerHTML); //js写法
+                alert(this.html()); //error
+                alert($(this).innerHTML); //error
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="div">HELLO JQUERY</div>
+</body>
+</html>

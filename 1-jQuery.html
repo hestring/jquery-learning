@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+<div id="div" class="box"></div>
+<div class="box box1"></div>
+<div class="boxbox1"></div>
+<div class="box1box"></div>
+<div class="box1 box"></div>
+<script>
+    var oDiv1=document.getElementById('div');
+    var oDiv2=document.getElementsByTagName('div');
+
+    function getByClass(oParent,sClass) {
+        var arr=[];
+        var aEle=oParent.getElementsByTagName('*');
+        var re=new RegExp('\\b'+sClass+'\\b');
+        for (var i=0;i<aEle.length;i++){
+            if (re.test(aEle[i].className)){
+                arr.push(aEle[i]);
+            }
+        }
+        return arr;
+    }
+
+    var aBox=getByClass(document,'box');
+    for (var i=0;i<aBox.length;i++){
+        aBox[i].style.background='#0ff';
+    }
+</script>
+</body>
+</html>

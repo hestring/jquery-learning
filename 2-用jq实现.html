@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            float: left;
+            margin-left: 10px;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+<div id="div" class="box"></div>
+<div class="box box1"></div>
+<div class="boxbox1" title="hello"></div>
+<div class="box1box" title="hello1"></div>
+<div class="box1 box" title="hello"></div>
+<script>
+    $('#div').css('background','#f00');
+    $('.box').css('background','#ff0');
+    $('div').css('background','#ff0');
+    $('div:first').css('background','#f0f');
+    $('div:last').css('background','#f0f');
+    $('div:eq(2)').css('background','#f0f');
+    $('div:even').css('background','#0ff');
+    $('div:odd').css('background','#000');
+    $('div').filter('[title=hello1]').css('background','#0f0');
+</script>
+</body>
+</html>

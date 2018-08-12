@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var oDiv=document.getElementById('div');
+            var aH2=document.getElementsByTagName('h2');
+            var aH3=document.getElementsByTagName('h3');
+            for (var i=0;i<aH2.length;i++){
+                aH2[i].style.color='red';
+            }
+            //jq
+            $('#div').find('h3').css('color','blue');
+        });
+    </script>
+</head>
+<body>
+<div id="div">
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h3>h3</h3>
+    <h2>h2</h2>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h2>h2</h2>
+</div>
+</body>
+</html>

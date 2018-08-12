@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('div').css('background','#f00');
+            $('div').filter('.box').css('background','#ff0');
+            $('div').not('.box').css('background','#f0f');
+            $('div').has('span').css('background','#000');
+        });
+    </script>
+</head>
+<body>
+<div></div>
+<div id="div" class="box"></div>
+<div class="box"></div>
+<div>
+    <span></span>
+</div>
+</body>
+</html>

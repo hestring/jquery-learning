@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var oDiv1=document.getElementById('div1');
+            var oDiv2=oDiv1.nextElementSibling;
+            oDiv2.style.background='#0f0';
+            oDiv2.previousElementSibling.style.background='#00f';
+
+            $('#div4').next().css('background','#0ff');
+            $('#div4').prev().css('background','#f0f');
+        });
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<div id="div4"></div>
+<div id="div5"></div>
+</body>
+</html>

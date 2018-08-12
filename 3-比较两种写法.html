@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        /*window.onload=function () {
+            var oDiv=document.getElementById('div');
+            oDiv.onclick=function () {
+                alert(this.innerHTML);
+            }
+        }*/
+        $(function () {
+            $('#div').click(function () {
+                alert($(this).html());
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="div">HELLO JQUERY</div>
+</body>
+</html>
