@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div input {
+            width: 80px;
+            height: 30px;
+            border: 1px solid #000;
+            background: #fff;
+            margin-bottom: 10px;
+        }
+        #div div {
+            width: 300px;
+            height: 200px;
+            border: 1px dashed #000;
+            background: #eee;
+            display: none;
+        }
+        #div .active{
+            background: #ff0;
+        }
+    </style>
+    <!--<script src="../js/jquery.min.js"></script>-->
+    <script>
+        window.onload=function () {
+            var oDiv=document.getElementById('div');
+            var aBtn=oDiv.getElementsByTagName('input');
+            var aCont=oDiv.getElementsByTagName('div');
+
+            for (var i=0;i<aBtn.length;i++){
+                aBtn[i].index=i;
+                aBtn[i].onclick=function () {
+                    for (var i=0;i<aBtn.length;i++){
+                        aBtn[i].className='none';
+                        aCont[i].style.display='none';
+                    }
+                    this.className='active';
+                    aCont[this.index].style.display='block';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div">
+    <input type="button" value="11111" class="active">
+    <input type="button" value="22222">
+    <input type="button" value="33333">
+    <div style="display: block;">11111</div>
+    <div>22222</div>
+    <div>33333</div>
+</div>
+</body>
+</html>

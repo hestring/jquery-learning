@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div input {
+            width: 80px;
+            height: 30px;
+            border: 1px solid #000;
+            background: #fff;
+            margin-bottom: 10px;
+        }
+        #div div {
+            width: 300px;
+            height: 200px;
+            border: 1px dashed #000;
+            background: #eee;
+            display: none;
+        }
+        #div .active{
+            background: #ff0;
+        }
+    </style>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('#div').find('input').click(function () {
+                $('#div').find('input').attr('class','');
+                $('#div').find('div').css('display','none');
+                $(this).attr('class','active');
+                $('#div').find('div').eq($(this).index()).css('display','block');
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="div">
+    <input type="button" value="11111" class="active">
+    <input type="button" value="22222">
+    <input type="button" value="33333">
+    <div style="display: block;">11111</div>
+    <div>22222</div>
+    <div>33333</div>
+</div>
+</body>
+</html>

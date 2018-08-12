@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 10px solid #000;
+            margin: 10px;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('#div').addClass('box5 box6');
+            $('#div').removeClass('box1 box6');
+            console.log($('#div').width());
+            console.log($('#div').innerWidth());
+            console.log($('#div').outerWidth());
+            console.log($('#div').outerWidth(true));
+        });
+    </script>
+</head>
+<body>
+<div id="div" class="box1 box2 box3 box4"></div>
+</body>
+</html>

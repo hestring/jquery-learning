@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       input{
+           width: 80px;
+           height: 30px;
+           border: 1px solid #000;
+           border-radius: 20px;
+           background: #0ff;
+           outline: none;
+       }
+        input:hover{
+            background: #ff0;
+        }
+        #div {
+            width: 500px;
+            height: 300px;
+            border: 1px dashed #000;
+            position: fixed;
+            background: #ccc;
+            border-radius: 20px;
+        }
+        #close{
+            width: 30px;
+            height: 30px;
+            background: blue;
+            border-radius: 50%;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font: 18px/30px '微软雅黑', sans-serif;
+            text-align: center;
+            color: #fff;
+            cursor: pointer;
+        }
+        .mask{
+            background: rgba(0,0,0,0.7);
+        }
+    </style>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('input').click(function () {
+                var oDiv=$('<div id="div"><div id="close">关</div></div>');
+                $('body').append(oDiv);
+
+                oDiv.css('left',($(window).width()-oDiv.outerWidth())/2);
+                oDiv.css('top',($(window).height()-oDiv.outerHeight())/2);
+                $('body').addClass('mask');
+
+                $(window).on('scroll resize',function () {
+                    oDiv.css('left',($(window).width()-oDiv.outerWidth())/2);
+                    oDiv.css('top',($(window).height()-oDiv.outerHeight())/2);
+                });
+                $('#close').click(function () {
+                    oDiv.remove();
+                    $('body').removeClass('mask');
+                });
+            });
+        });
+    </script>
+</head>
+<body style="height: 2000px;">
+<input type="button" value="弹窗">
+<!--<div id="div">
+    <div id="close">关</div>
+</div>-->
+</body>
+</html>
