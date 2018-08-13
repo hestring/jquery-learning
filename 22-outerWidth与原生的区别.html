@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //原生
+            // console.log($('#div').get(0).offsetWidth);
+            //JQ
+            // console.log($('#div').outerWidth());
+
+            console.log($('span').text());
+            $('span').html('<a href="#">link</a>');
+
+            $(document).ready(function () {
+
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="div">
+    <span>123456</span>
+    <span>234567</span>
+    <span>345678</span>
+</div>
+</body>
+</html>

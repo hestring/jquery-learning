@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // console.log($('li').get(1).innerHTML);
+
+            for (var i=0;i<$('li').get().length;i++){
+                $('li').get(i).style.background='red';
+            }
+
+            for (var i=0;i<$('li').length;i++){
+                $('li').get(i).style.background='green';
+            }
+
+            for (var i=0;i<$('li').length;i++){
+                $('li')[i].style.background='blue';
+            }
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+</body>
+</html>
