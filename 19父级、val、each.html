@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            /*position: absolute;*/
+        }
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: #ff0;
+            margin: 10px;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // $('#div1').parent().css('background','#0f0');
+            $('#div1').offsetParent().css('background','#0ff');
+            console.log($('#div1').find('input').val());
+            $('#div1').find('input').val(123);
+            console.log($('#div1').find('input').size());
+
+            $('#div1').find('input').each(function (i,elem) {
+                $(elem).css('background','blue');
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div id="div">
+    <div id="div1">
+        <input type="button" value="123456">
+        <input type="button" value="123456">
+        <input type="button" value="123456">
+        <input type="button" value="123456">
+    </div>
+</div>
+</body>
+</html>

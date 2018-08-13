@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #div{
+            width: 200px;
+            height: 200px;
+            outline: 1px solid #000;
+            margin: 30px;
+            overflow: hidden;
+            position: absolute;
+        }
+        #div div{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            margin: 20px;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            var oDiv=document.getElementById('div');
+            var oDiv1=oDiv.getElementsByTagName('div')[0];
+            console.log(oDiv1.offsetLeft);
+            var left=0;
+            while(oDiv1.offsetParent){
+                // console.log(oDiv1);
+                console.log(oDiv1.offsetParent);
+                left+=oDiv1.offsetLeft;
+                oDiv1=oDiv1.offsetParent;
+            }
+            console.log(left);
+            console.log($('#div').find('div').offset());
+            console.log($('#div').find('div').position());
+        });
+    </script>
+</head>
+<body>
+<div id="div">
+    <div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+        }  
+        .box{
+            width: 200px;
+            height: 200px;
+            background: #0f0;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('#div1').hover(function () {
+                // $('#div2').hide(1000);
+                // $('#div2').fadeOut(3000);
+                // $('#div2').slideUp(3000);
+                $('#div2').fadeTo(1000,0.1);
+            },function () {
+                // $('#div2').show();
+                // $('#div2').fadeIn(3000);
+                // $('#div2').slideDown(3000);
+                $('#div2').fadeTo(1000,1);
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2" class="box"></div>
+</body>
+</html>

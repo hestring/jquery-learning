@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            position: absolute;
+        }
+    </style>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('#div').mousedown(function (ev) {
+                var disX=ev.pageX-$(this).offset().left;
+                var disY=ev.pageY-$(this).offset().top;
+                $(document).mousemove(function (ev) {
+                    $('#div').css('left',ev.pageX-disX);
+                    $('#div').css('top',ev.pageY-disY);
+                });
+                $(document).mouseup(function () {
+                    $(document).off();
+                });
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>

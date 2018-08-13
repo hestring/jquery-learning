@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            // $(window).on('click',function (ev) {
+            //     alert(ev.pageX);
+            // });
+            $(window).on('mousedown',function (ev) {
+                alert(ev.which);
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>

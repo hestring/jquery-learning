@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            position: absolute;
+        }
+    </style>
+    <script src="../js/jquery.min.js"></script>
+    <script>
+        window.onload=function () {
+            var oDiv=document.getElementById('div');
+            oDiv.onmousedown=function (ev) {
+                ev=ev||window.event;
+                var disX=ev.clientX-this.offsetLeft;
+                var disY=ev.clientY-this.offsetTop;
+                document.onmousemove=function (ev) {
+                    ev=ev||window.event;
+                    oDiv.style.left=ev.clientX-disX+'px';
+                    oDiv.style.top=ev.clientY-disY+'px';
+                };
+                document.onmouseup=function () {
+                    document.onmousemove=null;
+                };
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>
