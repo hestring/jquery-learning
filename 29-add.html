@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: #ff0;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+       $(document).ready(function () {
+           $('#div').add('span').css('background','red');
+       });
+    </script>
+</head>
+<body class="">
+<div id="div">div</div>
+<span>span</span>
+</body>
+</html>

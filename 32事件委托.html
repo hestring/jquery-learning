@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+       $(document).ready(function () {
+           $('li').on('click',function () {
+               // $(this).css('background','#f00');
+               alert(123456);
+           });
+
+           // $('ul').delegate('li','click',function () {
+           //     $(this).css('background','#f00');
+           //     // $('ul').undelegate();
+           // });
+
+           $('ll').trigger('click');
+       });
+    </script>
+</head>
+<body>
+<button>STOP</button>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

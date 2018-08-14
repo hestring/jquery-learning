@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+
+    <script>
+       $(function () {
+
+           $.get('index.php',{username:'root',password:123456},function () {
+               alert(1);
+           });
+
+           $.post('index.php',function () {
+               alert(2);
+           });
+
+           $.getJSON('https://api.douban.com/v2/book/search?q=css&count=1&callback=?',function (data) {
+               console.log(data);
+           });
+       });
+    </script>
+    
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>

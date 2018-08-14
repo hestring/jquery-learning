@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+            position: absolute;
+        }
+    </style>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+
+        $.extend({
+            leftTrim:function (str) {
+                return str.replace(/^\s+/,'');
+            }
+        });
+
+        $.fn.extend({
+            drag:function () {
+                var disX=0;
+                var disY=0;
+                var This=this;
+                this.mousedown(function (ev) {
+                    disX=ev.pageX-$(this).offset().left;
+                    disY=ev.pageY-$(this).offset().top;
+                    $(document).mousemove(function (ev) {
+                        This.css('left',ev.pageX-disX);
+                        This.css('top',ev.pageY-disY);
+                    });
+                    $(document).mouseup(function () {
+                        $(document).off();
+                    });
+                    return false;
+                });
+            }
+        });
+    </script>
+    <script>
+        $(function () {
+            var str='   ppap    ';
+            // alert('('+$.leftTrim(str)+')');
+            $('#div').drag();
+            $('#div').click(function () {
+                $('#div').animate({width:"300"},2000);
+            });
+
+        });
+    </script>
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>

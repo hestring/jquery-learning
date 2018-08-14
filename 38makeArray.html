@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+
+    <script>
+       $(function () {
+           var aSpan=document.getElementsByTagName('span');
+           console.log(aSpan);
+           var arr=$.makeArray(aSpan);
+           console.log(arr);
+       });
+    </script>
+    
+</head>
+<body>
+<button>STOP</button>
+<div id="div">
+    <span></span><span></span><span></span><span></span><span></span>
+</div>
+</body>
+</html>

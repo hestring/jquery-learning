@@ -21,18 +21,24 @@
     <script>
        $(document).ready(function () {
            $('#div').find('div').siblings().addClass('siblings');
+           $('#div').find('div').nextAll().addClass('nextAll');
+           $('#div').find('div').prevAll().addClass('prevAll');
+           $('#div').find('div').prevAll().addClass('prevAll');
+           $('#div').find('div').parentsUntil('html').addClass('parentsUntil');
+           $('#div').find('div').nextUntil('span').addClass('nextUntil');
+           $('#div').find('div').prevUntil('h1').addClass('prevUntil');
        });
     </script>
 </head>
 <body class="">
 <div id="div">
-    <h1></h1>
-    <h2></h2>
-    <h2></h2>
-    <div id="div1"></div>
-    <a href="#">link</a>
-    <span></span>
-    <span></span>
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h2>h2</h2>
+    <div id="div1">div</div>
+    <a href="#">a</a>
+    <span>span</span>
+    <span>span</span>
 </div>
 </body>
 </html>

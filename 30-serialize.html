@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+       $(document).ready(function () {
+           var oBtn=$('input').filter('[type=button]');
+           oBtn.css('background','red');
+           oBtn.click(function () {
+               console.log($('form').serialize());
+               console.log($('form').serializeArray());
+           });
+       });
+    </script>
+</head>
+<body>
+<form action="">
+    <label for="username">username:</label>
+    <input type="text" name="username" value="root" id="username">
+    <label for="password">password:</label>
+    <input type="text" name="password" value="123456" id="password">
+    <input type="button" value="BUTTON">
+</form>
+</body>
+</html>

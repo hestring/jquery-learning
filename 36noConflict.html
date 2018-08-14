@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+
+    <script>
+        var huaxia=$.noConflict();
+        var $=0;
+        huaxia(document).ready(function () {
+           huaxia('#div').css('background','#0f0');
+       });
+    </script>
+
+</head>
+<body>
+<button>STOP</button>
+<div id="div"></div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+       $(document).ready(function () {
+           var a1='hello world';
+           var a2=[];
+           var a3='       hello world          ';
+           console.log(typeof a1);
+           console.log(typeof a2);
+           console.log($.type(a2));
+           console.log('('+a3+')');
+
+           var arr1=['a','bbb','cc','dd'];
+
+           console.log('('+$.trim(a3)+')');
+
+           console.log($.inArray('bbb', arr1));
+           function fn(){
+               alert(this);  //
+           }
+           // fn();window
+           // $('#div').click(fn); //div
+
+           $.proxy(fn,document)();
+
+           $('#div').click($.proxy(fn,document));
+
+
+       });
+    </script>
+</head>
+<body>
+<button>STOP</button>
+<div id="div"></div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background: #f00;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+
+    <script>
+       $(function () {
+           $.ajax({
+               url:'index.php',
+               data:'username=root',
+               type:'POST',
+               success:function (data) {
+                   alert(1);
+               },
+               error:function (data) {
+                   alert(2);
+               }
+           });
+       });
+    </script>
+    
+</head>
+<body>
+<div id="div"></div>
+</body>
+</html>
